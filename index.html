@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Para Ogris</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -63,6 +63,19 @@
     @keyframes brillo {
       0% { text-shadow: 0 0 5px gold; }
       100% { text-shadow: 0 0 30px #ffd700, 0 0 50px gold; }
+    }
+
+    @keyframes palpitar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .titulo-principal {
+      font-weight: 700;
+      font-size: 1.5em;
+      color: #b71c1c;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      animation: palpitar 2.5s infinite ease-in-out;
     }
 
     .tarjeta {
@@ -174,20 +187,6 @@
         opacity: 0;
       }
     }
-
-    /* NUEVO ESTILO PARA EL TÍTULO */
-    .titulo-principal {
-      font-weight: 700;
-      font-size: 1.8em;
-      color: #b71c1c;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-      animation: palpitar 2.5s infinite ease-in-out;
-    }
-
-    @keyframes palpitar {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
   </style>
 </head>
 <body onclick="crearParticulas(event)">
@@ -222,6 +221,7 @@
       <p>Ahora, tu sonrisa que es mi refugio, tu voz, el eco de mi paz. Me llamas "Ogro, mi amor, mi esposo" y sonrío, porque eres mi hogar.</p>
       <p>No hay distancia que borre lo eterno, ni un solo día en que no te quiera.</p>
       <p><strong>Ogrita, mi amor, mi vida</strong>, eres la historia que mi corazón no quiso olvidar. Hoy vivimos lo que el destino soñó: tú y yo, y nuestros hijos, un amor sin adiós.</p>
+
       <button class="boton-descargar" onclick="descargarCarta()">Descargar Carta</button>
     </div>
   </div>
