@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Para Ogris</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Dancing+Script:wght@600&display=swap');
 
     body {
       margin: 0;
@@ -183,15 +183,14 @@
       color: #c2185b;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
       margin-top: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
+      display: inline-block;
+      text-align: center;
     }
 
     .corazon-palpitante {
+      display: inline-block;
       animation: latido 1.2s infinite;
+      transform: translateY(0.1em);
     }
   </style>
 </head>
@@ -222,11 +221,12 @@
     <div class="tarjeta" id="tarjeta">
       <div class="emoji">😍</div>
       <img src="foto.jpg" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
+
+      <!-- TÍTULO EDITADO -->
       <h1 class="titulo-amor">
-        <span>Para Ogris</span>
-        <span class="corazon-palpitante">💖</span>
-        <span>Siempre Tú</span>
+        Para Ogris <span class="corazon-palpitante">💖</span> Siempre Tú
       </h1>
+
       <p>Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro, y me acompañabas en cada amanecer.</p>
       <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro era un destino escrito en fuego y tiempo.</p>
       <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar. Aunque la vida intentó alejarnos, el universo volvió a reencontrarnos.</p>
