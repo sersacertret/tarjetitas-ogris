@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Ogris, Siempre Tú</title>
+  <title>Para Ogris</title>
 
-  <!-- 🔥 Open Graph Meta Tags -->
+  <!-- Vista previa para redes sociales -->
   <meta property="og:title" content="Para Ogris, Siempre Tú 💖">
-  <meta property="og:description" content="Una carta romántica hecha con amor, escrita solo para ti, mi Ogrita preciosa. 💌✨">
-  <meta property="og:image" content="https://sersacertret.github.io/ogris_preview.png"> <!-- Asegúrate de subir esta imagen -->
+  <meta property="og:description" content="Una carta especial para ti, con amor, magia y música.">
+  <meta property="og:image" content="https://sersacertret.github.io/tarjetitas-ogris/ogris_preview.jpg">
+  <meta property="og:url" content="https://sersacertret.github.io/tarjetitas-ogris/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sersacertret.github.io">
 
-  <!-- Twitter preview (opcional pero recomendado) -->
+  <!-- Vista previa en Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Para Ogris, Siempre Tú 💖">
-  <meta name="twitter:description" content="Una carta romántica hecha con amor, escrita solo para ti, mi Ogrita preciosa. 💌✨">
+  <meta name="twitter:description" content="Una carta especial para ti, con amor, magia y música.">
   <meta name="twitter:image" content="https://sersacertret.github.io/tarjetitas-ogris/ogris_preview.jpg">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -127,19 +128,6 @@
       100% { transform: scale(1.3); }
     }
 
-    .titulo-romantico {
-      font-weight: bold;
-      font-size: 1.8em;
-      color: #c2185b;
-      text-shadow: 1px 1px 2px #ffb6c1;
-      animation: palpitar 2s infinite;
-    }
-
-    @keyframes palpitar {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
     .boton-descargar {
       margin-top: 20px;
       padding: 10px 20px;
@@ -151,6 +139,10 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    audio {
+      display: none;
     }
 
     .corazones {
@@ -198,9 +190,23 @@
         opacity: 0;
       }
     }
+
+    h1 {
+      font-size: 1.8em;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px #ff69b4;
+      animation: palpitarLento 2s infinite;
+    }
+
+    @keyframes palpitarLento {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
   </style>
 </head>
 <body onclick="crearParticulas(event)">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <audio id="musica" loop>
     <source src="audio.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio.
@@ -220,10 +226,11 @@
       <div class="texto-corazon">Presiona aquí</div>
       <div class="corazon" onclick="abrirCarta()">💛</div>
     </div>
+
     <div class="tarjeta" id="tarjeta">
       <div class="emoji">😍</div>
       <img src="foto.png" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
-      <h1 class="titulo-romantico">Para Ogris, Siempre Tú 💖</h1>
+      <h1>Para Ogris, Siempre Tú 💖</h1>
       <p>Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro, y me acompañabas en cada amanecer.</p>
       <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro era un destino escrito en fuego y tiempo.</p>
       <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar. Aunque la vida intentó alejarnos, el universo volvió a reencontrarnos.</p>
@@ -235,7 +242,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     function abrirCarta() {
       const sobre = document.getElementById('sobre');
