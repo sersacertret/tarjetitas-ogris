@@ -1,15 +1,22 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Ogris, Siempre Tú 💖</title>
+  <title>Para Ogris, Siempre Tú</title>
 
-  <!-- META para compartir en redes sociales -->
+  <!-- 🔥 Open Graph Meta Tags -->
   <meta property="og:title" content="Para Ogris, Siempre Tú 💖">
-  <meta property="og:description" content="Una carta de amor personalizada para Ogris.">
+  <meta property="og:description" content="Una carta romántica hecha con amor, escrita solo para ti, mi Ogrita preciosa. 💌✨">
+  <meta property="og:image" content="https://sersacertret.github.io/ogris_preview.png"> <!-- Asegúrate de subir esta imagen -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://tusitio.com/imagen.png">
-  <meta property="og:url" content="https://tusitio.com">
+  <meta property="og:url" content="https://sersacertret.github.io">
+
+  <!-- Twitter preview (opcional pero recomendado) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Para Ogris, Siempre Tú 💖">
+  <meta name="twitter:description" content="Una carta romántica hecha con amor, escrita solo para ti, mi Ogrita preciosa. 💌✨">
+  <meta name="twitter:image" content="https://sersacertret.github.io/ogris_preview.png">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -120,6 +127,19 @@
       100% { transform: scale(1.3); }
     }
 
+    .titulo-romantico {
+      font-weight: bold;
+      font-size: 1.8em;
+      color: #c2185b;
+      text-shadow: 1px 1px 2px #ffb6c1;
+      animation: palpitar 2s infinite;
+    }
+
+    @keyframes palpitar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
     .boton-descargar {
       margin-top: 20px;
       padding: 10px 20px;
@@ -131,10 +151,6 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    audio {
-      display: none;
     }
 
     .corazones {
@@ -182,26 +198,14 @@
         opacity: 0;
       }
     }
-
-    h1 {
-      font-size: 1.9em;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      animation: palpitar 2.5s infinite;
-    }
-
-    @keyframes palpitar {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
   </style>
 </head>
 <body onclick="crearParticulas(event)">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <audio id="musica" loop>
     <source src="audio.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio.
   </audio>
+
   <div class="corazones">
     <span style="left: 10%;">💗</span>
     <span style="left: 25%; font-size: 30px;">💖</span>
@@ -210,6 +214,7 @@
     <span style="left: 70%;">💕</span>
     <span style="left: 85%; font-size: 22px;">❤️</span>
   </div>
+
   <div class="contenedor" id="contenedor">
     <div class="sobre" id="sobre">
       <div class="texto-corazon">Presiona aquí</div>
@@ -217,8 +222,8 @@
     </div>
     <div class="tarjeta" id="tarjeta">
       <div class="emoji">😍</div>
-      <img src="foto.jpg" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
-      <h1>Para Ogris, Siempre Tú 💖</h1>
+      <img src="foto.png" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
+      <h1 class="titulo-romantico">Para Ogris, Siempre Tú 💖</h1>
       <p>Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro, y me acompañabas en cada amanecer.</p>
       <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro era un destino escrito en fuego y tiempo.</p>
       <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar. Aunque la vida intentó alejarnos, el universo volvió a reencontrarnos.</p>
@@ -229,6 +234,8 @@
       <button class="boton-descargar" onclick="descargarCarta()">Descargar Carta</button>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     function abrirCarta() {
       const sobre = document.getElementById('sobre');
