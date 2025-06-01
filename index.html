@@ -2,7 +2,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para_Ogris-Siempre_Tú</title>
+  <title>Para Ogris, Siempre Tú 💖</title>
+
+  <!-- META para compartir en redes sociales -->
+  <meta property="og:title" content="Para Ogris, Siempre Tú 💖">
+  <meta property="og:description" content="Una carta de amor personalizada para Ogris.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://tusitio.com/imagen.png">
+  <meta property="og:url" content="https://tusitio.com">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     body {
@@ -63,19 +71,6 @@
     @keyframes brillo {
       0% { text-shadow: 0 0 5px gold; }
       100% { text-shadow: 0 0 30px #ffd700, 0 0 50px gold; }
-    }
-
-    @keyframes palpitar {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-
-    .titulo-principal {
-      font-weight: 700;
-      font-size: 1.5em;
-      color: #b71c1c;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-      animation: palpitar 2.5s infinite ease-in-out;
     }
 
     .tarjeta {
@@ -187,6 +182,18 @@
         opacity: 0;
       }
     }
+
+    h1 {
+      font-size: 1.9em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      animation: palpitar 2.5s infinite;
+    }
+
+    @keyframes palpitar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
   </style>
 </head>
 <body onclick="crearParticulas(event)">
@@ -195,7 +202,6 @@
     <source src="audio.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio.
   </audio>
-
   <div class="corazones">
     <span style="left: 10%;">💗</span>
     <span style="left: 25%; font-size: 30px;">💖</span>
@@ -204,17 +210,15 @@
     <span style="left: 70%;">💕</span>
     <span style="left: 85%; font-size: 22px;">❤️</span>
   </div>
-
   <div class="contenedor" id="contenedor">
     <div class="sobre" id="sobre">
       <div class="texto-corazon">Presiona aquí</div>
       <div class="corazon" onclick="abrirCarta()">💛</div>
     </div>
-
     <div class="tarjeta" id="tarjeta">
       <div class="emoji">😍</div>
-      <img src="foto.png" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
-      <h1 class="titulo-principal">Para Ogris, Siempre Tú</h1>
+      <img src="foto.jpg" alt="Foto juntos" class="foto" id="foto" onclick="animarImagen()"/>
+      <h1>Para Ogris, Siempre Tú 💖</h1>
       <p>Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro, y me acompañabas en cada amanecer.</p>
       <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro era un destino escrito en fuego y tiempo.</p>
       <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar. Aunque la vida intentó alejarnos, el universo volvió a reencontrarnos.</p>
@@ -225,7 +229,6 @@
       <button class="boton-descargar" onclick="descargarCarta()">Descargar Carta</button>
     </div>
   </div>
-
   <script>
     function abrirCarta() {
       const sobre = document.getElementById('sobre');
