@@ -2,36 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Ogrita 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta de Amor</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+      text-align: center;
+      padding: 20px;
+    }
+    .tarjeta {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      margin: 50px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: zoomIn 1s ease, bounce 2s ease infinite;
+    }
+    h1 {
+      font-size: 2em;
+      color: #e91e63;
+    }
+    p {
+      font-size: 1.1em;
+      color: #333;
+      margin: 10px 0;
+    }
+    .emoji {
+      font-size: 3em;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+  </style>
 </head>
-<body>
-  <audio autoplay loop>
-    <source src="audio.mp3" type="audio/mpeg">
+
+<!-- AL TOCAR LA PANTALLA SE ACTIVA LA MÚSICA -->
+<body onclick="activarAudio()">
+
+  <audio id="musica" autoplay loop>
+    <source src="audio.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio.
   </audio>
 
-  <div class="card">
+  <div class="tarjeta">
     <div class="emoji">😍</div>
-    <h1>Para Ogrita, con todo mi amor 💘</h1>
-    
+    <h1>Para Ogris 💖</h1>
     <p>Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro, y me acompañabas en cada amanecer.</p>
-    <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro, era un destino escrito en fuego y tiempo.</p>
-
-    <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar.<br>
-    Aunque la vida intentó alejarnos, el universo volvió a rencontrarnos.</p>
-
-    <p>Ahora, tu sonrisa que es mi refugio,<br>
-    tu voz, el eco de mi paz.<br>
-    Me llamas "Ogro, mi amor, mi esposo" y sonrío,<br>
-    porque eres mi hogar.</p>
-
-    <p>No hay distancia que borre lo eterno,<br>
-    ni un solo día en que no te quiera.</p>
-
-    <p><strong>Ogrita, mi amor, mi vida</strong>, eres la historia que mi corazón no quiso olvidar.<br>
-    Hoy vivimos lo que el destino soñó: tú y yo, y nuestros hijos, un amor sin adiós.</p>
+    <p>La distancia era grande, pero nuestras almas se veían a escondidas en el viento, dando a entender que lo nuestro era un destino escrito en fuego y tiempo.</p>
+    <p><strong>Ogris, mi amor, mi razón</strong>, eres la historia que mi corazón no quiso olvidar. Aunque la vida intentó alejarnos, el universo volvió a reencontrarnos.</p>
+    <p>Ahora, tu sonrisa que es mi refugio, tu voz, el eco de mi paz. Me llamas "Ogro, mi amor, mi esposo" y sonrío, porque eres mi hogar.</p>
+    <p>No hay distancia que borre lo eterno, ni un solo día en que no te quiera.</p>
+    <p><strong>Ogrita, mi amor, mi vida</strong>, eres la historia que mi corazón no quiso olvidar. Hoy vivimos lo que el destino soñó: tú y yo, y nuestros hijos, un amor sin adiós.</p>
   </div>
+
+  <script>
+    function activarAudio() {
+      const audio = document.getElementById("musica");
+      audio.play().catch((e) => {
+        console.log("Autoplay bloqueado. Toca para activar.");
+      });
+    }
+  </script>
+
 </body>
 </html>
