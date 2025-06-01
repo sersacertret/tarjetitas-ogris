@@ -6,7 +6,7 @@
   <title>Tarjeta para Ogris</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
     body {
       margin: 0;
@@ -16,28 +16,46 @@
       height: 100vh;
     }
 
-    .container {
+    .sobre {
+      width: 200px;
+      height: 150px;
+      background: pink;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      margin: 100px auto;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+      cursor: pointer;
+      transition: transform 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: zoomIn 1s ease;
+    }
+
+    .sobre:hover {
+      transform: scale(1.05);
+    }
+
+    .corazon {
+      font-size: 2.5rem;
+      color: gold;
+      animation: parpadeo 1s infinite, latido 1.3s infinite;
+      text-shadow: 0 0 10px gold, 0 0 20px gold;
+    }
+
+    .titulo-sobre {
+      font-weight: bold;
+      color: #b71c1c;
+      margin-bottom: 10px;
+    }
+
+    .carta {
+      display: none;
       text-align: center;
       padding: 20px;
-      animation: fadeIn 1.2s ease-in;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-    }
-
-    .titulo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
-      color: #b71c1c;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 2px #ffb6c1;
-    }
-
-    .corazon-titulo {
-      display: inline-block;
-      animation: latido 1.3s infinite;
-      color: #ff1493;
+      animation: fadeIn 1s ease-in;
     }
 
     .card {
@@ -67,8 +85,9 @@
       transform: scale(1.1) translateY(-5px);
     }
 
-    audio {
-      display: none;
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0 }
+      to { transform: scale(1); opacity: 1 }
     }
 
     @keyframes fadeIn {
@@ -76,9 +95,9 @@
       to { opacity: 1 }
     }
 
-    @keyframes zoomIn {
-      from { transform: scale(0.5); opacity: 0 }
-      to { transform: scale(1); opacity: 1 }
+    @keyframes parpadeo {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
     @keyframes bounceIn {
@@ -95,39 +114,21 @@
       100% { transform: scale(1); }
     }
 
-    /* Efecto de partículas doradas */
-    body:active::after {
-      content: "";
-      position: fixed;
-      top: var(--y, 50%);
-      left: var(--x, 50%);
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle, gold 20%, transparent 70%);
-      border-radius: 50%;
-      animation: sparkle 0.6s ease-out forwards;
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    @keyframes sparkle {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(5);
-      }
+    audio {
+      display: none;
     }
   </style>
 </head>
-<body ontouchstart="guardarToque(event)">
+<body>
 
-<div class="container">
-  <h1 class="titulo">Para Mi Ogris <span class="corazon-titulo">💖</span> Siempre Tú</h1>
+<div class="sobre" onclick="abrirCarta()">
+  <div class="titulo-sobre">Presiona aquí</div>
+  <div class="corazon">💖</div>
+</div>
 
+<div class="carta" id="carta">
   <div class="card">
+    <h1>Para Ogris 💖</h1>
     <p>
       Pasaron muchos años, y yo nunca te pude olvidar, cada noche te convertías en susurro,  
       y me acompañabas en cada amanecer.  
@@ -157,16 +158,15 @@
 <audio id="musica" src="audio.mp3"></audio>
 
 <script>
-  document.body.addEventListener("click", function () {
-    const audio = document.getElementById("musica");
+  function abrirCarta() {
+    document.querySelector('.sobre').style.display = 'none';
+    const carta = document.getElementById('carta');
+    carta.style.display = 'block';
+
+    const audio = document.getElementById('musica');
     if (audio.paused) {
       audio.play();
     }
-  });
-
-  function guardarToque(e) {
-    document.body.style.setProperty("--x", e.touches[0].clientX + "px");
-    document.body.style.setProperty("--y", e.touches[0].clientY + "px");
   }
 </script>
 
